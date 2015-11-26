@@ -3641,7 +3641,6 @@ exports.loadModule = function(moduleName, onLoad) {
 
     if (!exports.get("packaged"))
         return afterLoad();
-    net.loadScript(exports.moduleUrl(moduleName, moduleType), afterLoad);
 };
 init(true);function init(packaged) {
 
