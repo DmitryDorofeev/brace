@@ -3257,6 +3257,9 @@ exports.get = function (url, callback) {
 };
 
 exports.loadScript = function(path, callback) {
+    if (!path) {
+      return;
+    }
     var head = dom.getDocumentHead();
     var s = document.createElement('script');
 
@@ -3570,6 +3573,10 @@ exports.all = function() {
     return lang.copyObject(options);
 };
 exports.moduleUrl = function(name, component) {
+    if(!name) {
+      return;
+    }
+
     if (options.$moduleUrls[name])
         return options.$moduleUrls[name];
 
